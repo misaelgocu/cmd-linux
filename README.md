@@ -98,6 +98,90 @@ grep: Filtra la salida para mostrar solo las líneas que coincidan con un texto.
 Ejemplo: Buscar si hay algún proceso activo relacionado con "app". 
 `ps aux | grep app.*`
 
+***
+***5. cat > name***
+
+Este comando nos ayuda a crear un archivo, una vez se ejectuta escribe lo que sea y ese texto estara ahí en ese texto, se cierra con ctrl + D
+
+---
+***6.  cat >> name***
+
+nos ayuda agregar contenido del archivo ya existente
+
+---
+
+***7. cat >| name***
+
+Sobre escribe el archivo, borra el anterior y escribe lo nuevo
+
+---
+***8. touch name***
+
+Crear un archivo nuevo
+
+---
+
+***9. cp file /root/folder/newfile***
+
+copiar un archivo a la dirección donde lo mandes
+
+---
+
+***10. mv file file2***
+
+Renombrar  un archivo
+
+---
+
+***11. rm name***
+
+Eliminar un archivo
+
+***12. rmdir folder*** 
+
+Eliminar una carpeta que está vacía
+
+---
+
+***13. rm -r folder***
+
+Eliminar un folder con su contenido
+
+---
+
+***14. head /etc/snort/snort.conf***
+
+para ver el principio de un archivo
+
+* Para ver las primeras 20 líneas de un archivo
+    ```
+        head -20 /etc/snort/snort.conf
+    ``` 
+
+***15. tail /etc/snort/snort.conf***
+
+Para ver las ultimas lineas de un archivo
+* Para ver las ultimas 20 líneas de un archivo
+    ```
+        tail -20 /etc/snort/snort.conf
+    ``` 
+
+***16. nl /etc/snort/snort.conf***
+
+Numerar la cantidad de las lineas de un archivo
+
+`nl /etc/snort/snort.conf`
+
+---
+
+***17. cat /etc/snort/snort.conf | grep output***
+
+Para filtrar palabras clave de un archivo, en este caso output
+
+---
+***18. nl /etc/snort/snort.conf  | grep output***
+
+Para encontrar las lineas donde se encuentran las palabras clave
 
 ---
 ### Resumen de comandos
