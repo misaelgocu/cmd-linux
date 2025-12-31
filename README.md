@@ -1,53 +1,20 @@
-Link de instrucciones en video:
-https://www.youtube.com/watch?v=B6YiXInMPRA
 
-Ver carpetas de archivos 
-'eza' 
-'''
-eza --icons
-eza -l
-eza -ls la
-eza -T
-
-BUsca en internet o IA para que sirve cada herramienta
----
-Instalación:
-'''
-sudo apt install eza
-sudo apt install glances
-sudo apt install cmatrix
-sudo apt install ncdu
-
-'''
-
-'''
- cmatric -c color
-
- ~  cmatrix -e
- Usage: cmatrix -[abBcfhlsmVx] [-u delay] [-C color]
- -a: Asynchronous scroll
- -b: Bold characters on
- -B: All bold characters (overrides -b)
- -c: Use Japanese characters as seen in the original matrix. Requires appropriate fonts
- -f: Force the linux $TERM type to be on
- -l: Linux mode (uses matrix console font)
- -L: Lock mode (can be closed from another terminal)
- -o: Use old-style scrolling
- -h: Print usage and exit
- -n: No bold characters (overrides -b and -B, default)
- -s: "Screensaver" mode, exits on first keystroke
- -x: X window mode, use if your xterm is using mtx.pcf
- -V: Print version information and exit
- -u delay (0 - 10, default 4): Screen update delay
- -C [color]: Use this color for matrix (default green)
- -r: rainbow mode
- -m: lambda mode
-
-
-
-'''
 ---
 ## Comandos de la terminal Linux
+
+***Basics**
+Estos no los explico porque son los de cajón
+```
+cd
+pwd
+ls
+ls -la
+-h
+man
+
+```
+
+
 ***
 1. locate
 ***
@@ -183,6 +150,53 @@ Para filtrar palabras clave de un archivo, en este caso output
 
 Para encontrar las lineas donde se encuentran las palabras clave
 
+`tail -n+ 507 /etc/snort/snort.conf | head -n 6`
+
+Este comando extrae un rango específico de líneas (de la 507 a la 512) del archivo de configuración de Snort.
+
+Desglose rápido:
+
+`tail -n+ 507 `: Empieza a leer el archivo desde la línea 507 en adelante (omite las primeras 506).
+
+`/etc/snort/snort.conf`: Es la ruta del archivo que estás consultando.
+
+| (pipe): Pasa el resultado del primer comando al segundo.
+
+`head -n 6`: Toma solo las primeras 6 líneas que recibió del tail.
+
+En resumen: Estás visualizando exactamente las líneas 507, 508, 509, 510, 511 y 512 de ese archivo.
+
+---
+
+***19. sed para encontrar y reemplazar***
+
+Buscar coincidencias de una palabra 
+
+``
+
+Busquemos mysql en snort.conf 
+
+`cat /etc/snort/snort.conf | grep mysql`
+
+Este comando encuentra todas las coincidencias
+
+Para reemplazar con MySQL
+
+`sed s/mysql/MySQL/g /etc/snort/snort.conf > snort2.conf`
+
+El comando `s` realiza la búsqueda
+
+con `/` le das la palabra clave a buscar (mysql)
+
+con `/`  le das la palabra a reemplazar
+
+El cmd `g` para indicar que reemplazaras todas las coincidencias
+
+
+
+
+
+
 ---
 ### Resumen de comandos
 ---
@@ -193,3 +207,57 @@ Para encontrar las lineas donde se encuentran las palabras clave
 | **whereis** | Rápida | Rutas estándar de sistema | Binarios, manuales y fuentes de comandos. |
 | **find** | Lenta | Escaneo de disco en vivo | Búsqueda exhaustiva con filtros avanzados. |
 | **ps \| grep** | Instantánea | Memoria RAM (procesos) | Programas que se están ejecutando ahora. |
+
+***
+
+Link de instrucciones en video:
+https://www.youtube.com/watch?v=B6YiXInMPRA
+
+Ver carpetas de archivos 
+'eza' 
+'''
+eza --icons
+
+eza -l
+
+eza -ls la
+
+eza -T
+
+BUsca en internet o IA para que sirve cada herramienta
+---
+Instalación:
+'''
+sudo apt install eza
+sudo apt install glances
+sudo apt install cmatrix
+sudo apt install ncdu
+
+'''
+
+'''
+ cmatric -c color
+
+ ~  cmatrix -e
+ Usage: cmatrix -[abBcfhlsmVx] [-u delay] [-C color]
+ -a: Asynchronous scroll
+ -b: Bold characters on
+ -B: All bold characters (overrides -b)
+ -c: Use Japanese characters as seen in the original matrix. Requires appropriate fonts
+ -f: Force the linux $TERM type to be on
+ -l: Linux mode (uses matrix console font)
+ -L: Lock mode (can be closed from another terminal)
+ -o: Use old-style scrolling
+ -h: Print usage and exit
+ -n: No bold characters (overrides -b and -B, default)
+ -s: "Screensaver" mode, exits on first keystroke
+ -x: X window mode, use if your xterm is using mtx.pcf
+ -V: Print version information and exit
+ -u delay (0 - 10, default 4): Screen update delay
+ -C [color]: Use this color for matrix (default green)
+ -r: rainbow mode
+ -m: lambda mode
+
+
+
+'''
