@@ -11,6 +11,8 @@ ls
 ls -la
 -h
 man
+hostname -I
+neofetch
 
 ```
 
@@ -193,9 +195,100 @@ con `/`  le das la palabra a reemplazar
 El cmd `g` para indicar que reemplazaras todas las coincidencias
 
 
+---
+***20. Ver archivos con more y less***
+
+Esto nos sirve para archivos largos
+
+***more***
+
+`more /etc/snort/snort.conf `
+Puedes bajar con enter y te muestra un barra de tiempo que muestra el % de la página que estas recorriendo.
+Para salir presion `q`
+
+
+***less***
+
+`less /etc/snort/snort.conf `
+
+Muestra y filtra al igual que more puedes ver y scrolear con enter, salir con q, pero además puedes filtrar 
+En la esquina inferior izquierda solo escribe un slash y una palabra a buscar y te mostrara la palabra clave sobresaltada `/ keyword`
+
+
+---
+## Redes
+---
+
+***21. ver redes activas***
+
+`ifconfig`
+
+Puedes ver la conexión de red por cable, información de la ip, mascara de red, red inalámbrica.
+
+`iwconfig`
+
+tener información de adaptadores 
+
+---
+
+***22. cambiar la ip, mascara de red, dirección broadcast***
+
+Para cambiar la dirección ip
+
+`ifconfig eth0 192.168.x.x`
+
+`ifconfig eth0 192.168.x.x netmask 255.255.0.0 broadcast 192.168.x.x`
+
+`ifconfig eth0 192.168.x.x`
+
+
+Reemplaza las x por tus números correspondientes
 
 
 
+---
+
+***23. Falsificar tu MAC address***
+
+Cambiar la dirección MAC (el identificador físico único) de tu tarjeta de red en sistemas Linux.
+
+```
+ifconfig eth0 down
+
+ifconfig eth0 hw ether 00:11:22:33:44:55
+
+ifconfig eth0 up
+```
+
+1. Desactivar la interfaz
+ifconfig eth0 down
+
+Para qué sirve: Apaga la interfaz de red llamada eth0.
+
+Por qué es necesario: No puedes cambiar la configuración de hardware de una tarjeta de red mientras está activa y transmitiendo datos.
+
+2. Cambiar la dirección física (MAC)
+ifconfig eth0 hw ether 00:11:22:33:44:55
+
+Para qué sirve: Cambia la dirección MAC de la tarjeta por la que tú elijas (en este caso, 00:11:22:33:44:55).
+
+Nota importante: Este cambio es temporal. Si reinicias la computadora, la tarjeta volverá a su dirección MAC original de fábrica.
+
+. Reactivar la interfaz
+ifconfig eth0 up
+
+Para qué sirve: Enciende de nuevo la interfaz eth0.
+
+Resultado: Ahora la tarjeta volverá a conectarse a la red, pero identificándose con la nueva dirección MAC que configuraste en el paso anterior.
+
+Por qué alguien haría esto?
+Privacidad: Para evitar que rastreen tu dispositivo en redes Wi-Fi públicas.
+
+Pruebas de seguridad: Para simular ser otro dispositivo dentro de una red (pentesting).
+
+Saltar restricciones: Algunos routers limitan el acceso a internet basándose en la dirección MAC; cambiarla puede ayudar a saltar esos bloqueos.
+
+Dato extra: El comando ifconfig se considera hoy en día "depreciado" (antiguo). En versiones modernas de Linux, se recomienda usar el comando ip. Por ejemplo: `ip link set eth0 down`.
 
 ---
 ### Resumen de comandos
