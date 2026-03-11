@@ -290,6 +290,31 @@ Saltar restricciones: Algunos routers limitan el acceso a internet basándose en
 
 Dato extra: El comando ifconfig se considera hoy en día "depreciado" (antiguo). En versiones modernas de Linux, se recomienda usar el comando ip. Por ejemplo: `ip link set eth0 down`.
 
+### Asignar nueva direción ip  del servidor DHCP
+
+EL DHCP asigna direciones IP  a todos los sistemeas en la sub red y mantiene archivos de registro del cual una direción IP está alojada en que maquina y en cualquier momento.
+Para solictar un direción IP de DHCP, lamamos lal servidor DHCP con el comando ``` dhclient ``` seguido de la interfaz que quieras asignar 
+
+```
+dhclient eth0
+ifconfig
+```
+
+### Examinar DNS con dig
+
+Ofrece una forma para recolectarinformacion DNS sobre un domino, com la direción IP, servidor email, subdominios y direciones IP
+
+Agrega ns (short nameserver)
+
+```
+dig hackers-arise.com ns
+```
+con el short mx es para conocer el sistema email
+
+```
+dig hackers-arise.com mx
+```
+
 ---
 ### Resumen de comandos
 ---
@@ -317,18 +342,21 @@ eza -ls la
 
 eza -T
 
-BUsca en internet o IA para que sirve cada herramienta
+Busca en internet o IA para que sirve cada herramienta
+
 ---
+
 Instalación:
-'''
+
+```
 sudo apt install eza
 sudo apt install glances
 sudo apt install cmatrix
 sudo apt install ncdu
+```
 
-'''
 
-'''
+```
  cmatric -c color
 
  ~  cmatrix -e
@@ -353,4 +381,4 @@ sudo apt install ncdu
 
 
 
-'''
+```
