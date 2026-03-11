@@ -99,6 +99,9 @@ copiar un archivo a la dirección donde lo mandes
 ***10. mv file file2***
 
 Renombrar  un archivo
+Tambien sirve para mover archivos o carpeta a otra dirección
+
+`mv 8/ /home/user/folder`
 
 ---
 
@@ -381,4 +384,3 @@ sudo apt install ncdu
 
 
 
-```
