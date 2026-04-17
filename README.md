@@ -318,6 +318,42 @@ con el short mx es para conocer el sistema email
 dig hackers-arise.com mx
 ```
 
+### Cambiar tu DNS Server
+Entra a ``` cd /etc/resolv.conf``` del sistema abrelo con un editor de texto, podras ver tu IP, y cambiarla por otra como po la de google que es 8.8.8.8
+Cambia a quién le pides las direcciones de las páginas.
+👉 ¿Por qué hacerlo?
+
+* A veces el internet va más rápido
+* Puede arreglar páginas que no cargan
+* Evita ciertos bloqueos de tu proveedor
+
+
+---
+
+### Mapping Your Own IP Addresses
+
+Puedes determinar en que dirección IP va a ir tu navegador cuando ingresas, enlugar de que el servidor DNS decida
+
+``` cd  /etc/hosts```
+Entras con algun editor de codigo y agregas lo siguiente
+
+```
+192.168.56.1    facebook.com
+```
+
+
+tu computadora va a intentar abrir Facebook en esa IP, aunque no sea la real.
+
+👉 ¿Para qué se usa?
+
+Probar sitios en servidores locales (desarrollo)
+Bloquear páginas (redirigiéndolas a una IP falsa)
+Simular o hacer pruebas de red
+
+💡 En resumen: es como engañar a tu computadora para que vaya a donde tú quieres en lugar de donde debería ir.
+
+
+
 ---
 ### Resumen de comandos
 ---
