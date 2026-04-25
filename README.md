@@ -352,8 +352,45 @@ Simular o hacer pruebas de red
 
 💡 En resumen: es como engañar a tu computadora para que vaya a donde tú quieres en lugar de donde debería ir.
 
+---
+## Agregar y eliminar software
+---
 
 
+### Usar apt 
+
+Antes de descargar un paquete de software puedes checar si esta disponible
+
+```
+apt-cache search <keyword>
+
+# por ejemplo
+
+apt-cache search python
+```
+
+
+* Para instalar software con ``` apt-get ```
+    ```
+        apt-get install <packagename>
+    ```
+* Para eliminar software
+    ``
+     apt-get remove <packagename>
+    ``
+* Si quieres eliminar tambien de los archivos de configuración al mismo tiempo el package
+    `
+        apt-get purge <packagename>
+    `
+
+    Despues de hacer 'purge' ejecuta
+    `
+        sudo apt-get autoremove
+    `
+
+* Para actualizar software
+    `apt-get update`
+    
 ---
 ### Resumen de comandos
 ---
