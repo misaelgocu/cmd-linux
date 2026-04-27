@@ -388,9 +388,19 @@ apt-cache search python
         sudo apt-get autoremove
     `
 
-* Para actualizar software
+*  Actualiza la base de datos local de paquetes disponibles
     `apt-get update`
     
+* Instala las versiones más nuevas de todos los paquetes instalados actualmente en el sistema.
+    `apt-get upgrade`
+
+## Agregar repositorios a tu archivo soources.list
+
+Para abrir el archivo:
+`nano /etc/apt/sources.list`
+
+
+
 ---
 ### Resumen de comandos
 ---
