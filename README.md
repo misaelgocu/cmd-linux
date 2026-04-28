@@ -399,6 +399,34 @@ apt-cache search python
 Para abrir el archivo:
 `nano /etc/apt/sources.list`
 
+---
+
+## Otorgar permisos
+
+### Para cambiar el propietario de un archivo.
+`chown bob /tmp/bobsfile`
+
+**chown** = change owner (cambiar propietario)
+**bob** = el nuevo usuario dueño del archivo
+**/tmp/bobsfile** = el archivo al que se le cambia el dueño
+👉 Es decir, después de ejecutar ese comando, el archivo /tmp/bobsfile pasará a ser propiedad del usuario bob.
+
+### Para transferir propiedades a un archivo de un grupo a otro
+
+
+`chgrp  security newIDS`
+
+**chgrp** = change group (cambiar grupo)
+**security** = el nuevo grupo asignado
+**newIDS** = el archivo o directorio afectado
+
+### Checando permisos
+
+Para mostrar el contenido del directorio en formato largo y ver los permisos
+
+`ls -l /usr/share/hashcat`
+
+
 
 
 ---
